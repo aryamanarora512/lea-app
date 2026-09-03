@@ -1,0 +1,13 @@
+# Secrets and local config — never commit these
+.env
+.streamlit/secrets.toml
+
+# Local database and generated data
+data/*.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+logs/*.log

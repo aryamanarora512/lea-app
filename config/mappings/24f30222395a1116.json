@@ -1,0 +1,21 @@
+{
+  "fingerprint": "24f30222395a1116",
+  "target_table": "cas_economics",
+  "column_map": {
+    "file_number": "case_ref",
+    "handling_attorney_team_member": "attorney",
+    "practice_area": "injury_type",
+    "county": "city",
+    "state": "state",
+    "settlement_amount": "gross_settlement",
+    "attorney_fee": "net_fee",
+    "close_year": "settled_year",
+    "time_to_settle": "duration_days"
+  },
+  "transforms": {
+    "duration_days": "months_to_days"
+  },
+  "label": "nugent_raw_cases",
+  "firm_hint": "Nugent",
+  "created_at": "2026-07-29T22:42:07+00:00"
+}

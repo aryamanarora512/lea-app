@@ -16,7 +16,12 @@ from sqlalchemy.engine import Engine
 from .dbml import parse_dbml, schema_ddl
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_DBML = PROJECT_ROOT.parent / "Table firms {.go"
+# Schema definition lives inside the repo (schema/) so the app is
+# self-contained when deployed. Fall back to the old parent-folder location
+# for a local checkout that predates the move.
+DEFAULT_DBML = PROJECT_ROOT / "schema" / "Table firms {.go"
+if not DEFAULT_DBML.exists():
+    DEFAULT_DBML = PROJECT_ROOT.parent / "Table firms {.go"
 DEFAULT_SQLITE = PROJECT_ROOT / "data" / "lea_portfolio.db"
 
 
